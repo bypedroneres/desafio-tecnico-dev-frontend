@@ -15,8 +15,8 @@ const Item: React.FC<ItemProps> = ({ item }) => {
     <tr className='border border-gray-100 hover:bg-gray-100 cursor-pointer'>
       {/* Desktop style */}
       <td className="py-2 pl-4 hidden lg:table-cell">
-        <div className="car-image flex items-center">
-          <img src={item.car} alt="Car" className="h-10 w-10"/>
+        <div className="car-image flex items-center rounded">
+        <div className="car-image h-10 w-10 rounded" style={{ backgroundImage: `url(${item.car})`, backgroundSize: 'cover', backgroundPosition: 'center'  }}></div>
           <span className="ml-2">{item.carname}</span>
         </div>
       </td>
@@ -53,7 +53,7 @@ const Item: React.FC<ItemProps> = ({ item }) => {
             </span>
             </div>
             {/* Car image */}
-            <div className="car-image h-24 w-24" style={{ backgroundImage: `url(${item.car})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+            <div className="car-image h-24 w-24 rounded" style={{ backgroundImage: `url(${item.car})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
           </div>
           {/* Car details */}
           <div className="flex-grow px-4">
