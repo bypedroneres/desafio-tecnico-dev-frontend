@@ -12,10 +12,9 @@ interface ItemProps {
 
 const Item: React.FC<ItemProps> = ({ item }) => {
   const renderRatingStars = React.useMemo(() => {
-    const stars = Array.from({ length: item.rating }, (_, index) => (
+    return Array.from({ length: item.rating }, (_, index) => (
       <span key={index} className="mr-2">&#9733;</span>
     ));
-    return stars;
   }, [item.rating]);
 
   return (
@@ -58,7 +57,9 @@ const Item: React.FC<ItemProps> = ({ item }) => {
           <div className="flex-grow px-4">
             <p className="text-base font-semibold">{item.carname}</p>
             <p className="text-sm text-gray-500">Next reservation: {item.nextReservation}</p>
-            <p className="text-base text-black">{renderRatingStars}</p>
+            {item.status === 'Available' && (
+              <p className="text-base text-black">{renderRatingStars}</p>
+            )}
           </div>
           {/* Action */}
           <div className="actions flex w-1/6">
