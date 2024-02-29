@@ -23,7 +23,7 @@ const Item: React.FC<ItemProps> = ({ item }) => {
       {/* Desktop style */}
       <td className="py-2 pl-4 hidden lg:table-cell">
         <div className="car-image flex items-center rounded">
-          <div className="car-image h-full w-full rounded" style={{ backgroundImage: `url(${item.car})`, backgroundSize: 'cover', backgroundPosition: 'center', width: '100px', height: '100px' }}></div>
+          <div className="car-image h-full w-full rounded" style={{ backgroundImage: `url(${item.car})`, backgroundSize: 'cover', backgroundPosition: 'center', width: '75px', height: '75px' }}></div>
           <span className="ml-2">{item.carname}</span>
         </div>
       </td>
@@ -49,9 +49,13 @@ const Item: React.FC<ItemProps> = ({ item }) => {
         <div className="car-info flex items-center">
           <div className="relative" style={{ width: '100px', height: '100px' }}>
             <div className="absolute top-0 left-0">
-              <span className={`text-2xl flex items-center justify-center ${item.status === 'Available' ? 'bg-green-400 text-white' : 'bg-red-400 text-white'} rounded-full h-8 w-8`}>
-                {item.status === 'Available' ? '\u2713' : 'x'}
-              </span>
+            <span className={`flex items-center justify-center rounded-full h-8 w-8 ${item.status === 'Available' ? '' : ''}`}>
+            {item.status === 'Available' ? (
+            <img src="/available.jpg" alt="Available" className="h-6 w-6" />
+            ) : (
+            <img src="/unavailable.jpg" alt="Unavailable" className="h-6 w-6" />
+            )}
+            </span>
             </div>
             <div className="car-image h-full w-full rounded" style={{ backgroundImage: `url(${item.car})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
           </div>
