@@ -7,7 +7,7 @@ interface TableProps {
 
 const Table: React.FC<TableProps> = ({ data }) => {
   return (
-  <div className="table-responsive border border-gray-100 shadow-lg rounded-md mt-40">
+    <div className="table-responsive border border-gray-100 shadow-lg rounded-md mt-40">
       <table className="table bg-white w-full">
         <thead>
           <tr>
@@ -19,8 +19,8 @@ const Table: React.FC<TableProps> = ({ data }) => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item, index) => (
-            <Item key={index} item={item} />
+          {data.map((item) => (
+            <Item key={item.car} item={item} />
           ))}
         </tbody>
       </table>
@@ -28,4 +28,4 @@ const Table: React.FC<TableProps> = ({ data }) => {
   );
 };
 
-export default Table;
+export default React.memo(Table);
