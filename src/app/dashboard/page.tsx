@@ -13,7 +13,7 @@ function Dashboard() {
       rating: 4,
     },
     {
-      car: 'car2.jpg',
+      car: 'car1.jpg',
       carname: 'Mini Cooper 2020',
       nextReservation: '11/08',
       status: 'Unavailable',
@@ -27,7 +27,7 @@ function Dashboard() {
       rating: 5,
     },
     {
-      car: 'car2.jpg',
+      car: 'car1.jpg',
       carname: 'Mini Cooper 2020',
       nextReservation: '11/10',
       status: 'Unavailable',
@@ -41,7 +41,7 @@ function Dashboard() {
       rating: 4,
     },
     {
-      car: 'car2.jpg',
+      car: 'car1.jpg',
       carname: 'Mini Cooper 2020',
       nextReservation: '11/12',
       status: 'Unavailable',
