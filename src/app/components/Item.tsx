@@ -22,8 +22,8 @@ const Item: React.FC<ItemProps> = ({ item }) => {
     <tr className='border border-gray-100 hover:bg-gray-100 cursor-pointer'>
       {/* Desktop style */}
       <td className="py-2 pl-4 hidden lg:table-cell">
-        <div className="car-image flex items-center rounded" style={{ width: '40px', height: '40px' }}>
-          <div className="car-image h-full w-full rounded" style={{ backgroundImage: `url(${item.car})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+        <div className="car-image flex items-center rounded">
+          <div className="car-image h-full w-full rounded" style={{ backgroundImage: `url(${item.car})`, backgroundSize: 'cover', backgroundPosition: 'center', width: '100px', height: '100px' }}></div>
           <span className="ml-2">{item.carname}</span>
         </div>
       </td>
@@ -47,7 +47,7 @@ const Item: React.FC<ItemProps> = ({ item }) => {
       {/* Mobile style */}
       <td className="py-2 pl-4 lg:hidden relative">
         <div className="car-info flex items-center">
-          <div className="relative" style={{ width: '40px', height: '40px' }}>
+          <div className="relative" style={{ width: '100px', height: '100px' }}>
             <div className="absolute top-0 left-0">
               <span className={`text-2xl flex items-center justify-center ${item.status === 'Available' ? 'bg-green-400 text-white' : 'bg-red-400 text-white'} rounded-full h-8 w-8`}>
                 {item.status === 'Available' ? '\u2713' : 'x'}
